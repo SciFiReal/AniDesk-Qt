@@ -1,0 +1,42 @@
+{
+  "_comment": "AdvancedLivePortrait 静态图驱动工作流（API 格式模板）。节点名/参数以 ComfyUI-AdvancedLivePortrait (dfl) 为准；若你的节点版本不同，请在 ComfyUI 中摆好工作流后用 Save (API Format) 导出，并把图片输入替换为 {{IMAGE}}、驱动视频输入替换为 {{DRIVING_VIDEO}}、帧率替换为 {{FPS}}。",
+  "1": {
+    "class_type": "SourceImage",
+    "inputs": {
+      "image": "{{IMAGE}}"
+    }
+  },
+  "2": {
+    "class_type": "DrivingVideo",
+    "inputs": {
+      "video": "{{DRIVING_VIDEO}}",
+      "select_every_n_frame": 2
+    }
+  },
+  "3": {
+    "class_type": "AdvancedLivePortrait",
+    "inputs": {
+      "source_image": ["1", 0],
+      "driving_video": ["2", 0],
+      "relative_motion": true,
+      "find_best_frame": false,
+      "anim_engine": "",
+      "expression_scale": 1.0
+    }
+  },
+  "4": {
+    "class_type": "VHS_VideoCombine",
+    "inputs": {
+      "images": ["3", 0],
+      "frame_rate": {{FPS}},
+      "loop_count": 0,
+      "filename_prefix": "anidesk_anim",
+      "format": "image/gif",
+      "pingpong": true,
+      "save_output": true,
+      "_meta": {
+        "title": "GIF Export"
+      }
+    }
+  }
+}

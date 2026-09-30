@@ -1,0 +1,11 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <!-- 内置宠物形象：每个状态一段带 Alpha 通道的 GIF（由 tools/gen_pet_gifs.py 生成） -->
+    <qresource prefix="/pets">
+        <file alias="idle.gif">pets/idle.gif</file>
+        <file alias="talking.gif">pets/talking.gif</file>
+        <file alias="thinking.gif">pets/thinking.gif</file>
+        <file alias="happy.gif">pets/happy.gif</file>
+        <file alias="sleeping.gif">pets/sleeping.gif</file>
+    </qresource>
+</RCC>

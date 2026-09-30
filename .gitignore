@@ -1,0 +1,19 @@
+# Build outputs
+build/
+build-dbg/
+cache/
+
+# Qt/CMake generated
+*.user
+CMakeLists.txt.user*
+.DS_Store
+
+
+# Python 虚拟环境
+.venv/
+venv/
+ENV/
+
+# 其他
+__pycache__/
+*.pyc
